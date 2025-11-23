@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"
+        data-xwiki-reference="xwiki:eSeason Résa.WebServices.API.WebCampServices.cpg_GetSupplementsForOneStay.WebHome"
+    data-xwiki-document="eSeason Résa.WebServices.API.WebCampServices.cpg_GetSupplementsForOneStay.WebHome"
+    data-xwiki-wiki="xwiki"
+    data-xwiki-space="eSeason Résa.WebServices.API.WebCampServices.cpg_GetSupplementsForOneStay"
+    data-xwiki-page="WebHome"
+    data-xwiki-isnew="false"
+            data-xwiki-version="20.1"
+    data-xwiki-rest-url="//xwiki/rest/wikis/xwiki/spaces/eSeason%20R%C3%A9sa/spaces/WebServices/spaces/API/spaces/WebCampServices/spaces/cpg_GetSupplementsForOneStay/pages/WebHome"
+    data-xwiki-form-token="yzxwoxdOXd5FiExE15sgqQ"
+    data-xwiki-user-reference="xwiki:XWiki.reneoltra"
+    data-xwiki-locale=""
+>
+  <head>
+                    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+                                                    <title>cpg_GetSupplementsForOneStay - SequoiaSoft</title>
+                                    <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <link rel="shortcut icon" href="/xwiki/resources/icons/xwiki/favicon.ico?cache-version=1561453700000" />
+        <link rel="icon" href="/xwiki/resources/icons/xwiki/favicon16.png?cache-version=1561453700000" type="image/png" />
+        <link rel="icon" href="/xwiki/resources/icons/xwiki/favicon.svg?cache-version=1561453700000" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/xwiki/resources/icons/xwiki/favicon144.png?cache-version=1561453700000" />
+                      <link rel="alternate" type="application/x-wiki" title="Edit" href="/xwiki/bin/edit/eSeason%20R%C3%A9sa/WebServices/API/WebCampServices/cpg_GetSupplementsForOneStay/WebHome" />
+                    <link rel="canonical" href="/xwiki/bin/view/eSeason%20R%C3%A9sa/WebServices/API/WebCampServices/cpg_GetSupplementsForOneStay/" />
+                    <meta name="description" content="cpg_GetSupplementsForOneStay" />
+<link rel="alternate" type="application/rss+xml" title="Wiki Feed RSS" href="/xwiki/bin/view/Main/WebRss?xpage=rdf" />
+<link rel="alternate" type="application/rss+xml" title="Blog RSS Feed" href="/xwiki/bin/view/Blog/GlobalBlogRss?xpage=plain" />
+                <link href="/xwiki/webjars/wiki%3Axwiki/bootstrap-switch/3.3.2/css/bootstrap3/bootstrap-switch.min.css" type='text/css' rel='stylesheet'/><link href="/xwiki/webjars/wiki%3Axwiki/xwiki-platform-tree-webjar/11.5/tree.min.css?evaluate=true" type='text/css' rel='stylesheet'/><link href="/xwiki/webjars/wiki%3Axwiki/selectize.js/0.12.5/css/selectize.bootstrap3.css" type='text/css' rel='stylesheet'/>
+    <link href="/xwiki/webjars/wiki%3Axwiki/drawer/2.4.0/css/drawer.min.css" rel="stylesheet" type="text/css" />
+                
+                                                                                                                    
+
+
+
+<link href="      /xwiki/bin/skin/skins/flamingo/style.css?cache-version=1561453698000&skin=flamingo&#38;colorTheme=xwiki%3AFlamingoThemes.Simplex
+  " rel="stylesheet" type="text/css" media="all" />
+<link href="      /xwiki/bin/skin/skins/flamingo/print.css?cache-version=1561453698000&skin=flamingo&#38;colorTheme=xwiki%3AFlamingoThemes.Simplex
+  " rel="stylesheet" type="text/css" media="print" />
+        <!--[if IE]>
+  <link href="      /xwiki/bin/skin/skins/flamingo/ie-all.css?cache-version=1561453698000&skin=flamingo&#38;colorTheme=xwiki%3AFlamingoThemes.Simplex
+  " rel="stylesheet" type="text/css" />
+<![endif]-->
+    
+    <link rel='stylesheet' type='text/css' href='/xwiki/bin/skin/resources/css/xwiki-min.css?cache-version=1561454562000?colorTheme=FlamingoThemes.Simplex&amp;language=fr'/><link rel='stylesheet' type='text/css' href='/xwiki/bin/skin/resources/uicomponents/search/searchSuggest.css?cache-version=1561454562000'/><link rel='stylesheet' type='text/css' href='/xwiki/bin/skin/resources/uicomponents/suggest/xwiki.selectize.css?cache-version=1561454562000'/><link rel='stylesheet' type='text/css' href='/xwiki/bin/skin/resources/uicomponents/viewers/tags.css?cache-version=1561454562000?colorTheme=FlamingoThemes.Simplex'/><link rel='stylesheet' type='text/css' href='/xwiki/bin/skin/resources/uicomponents/widgets/upload.css?cache-version=1561454562000'/><link rel='stylesheet' type='text/css' href='/xwiki/bin/skin/resources/js/xwiki/viewers/attachments.css?cache-version=1561454560000'/><link rel='stylesheet' type='text/css' href='/xwiki/bin/skin/resources/uicomponents/pagination/pagination.css?cache-version=1561454562000'/>
+    <link rel="stylesheet" type="text/css" href="/xwiki/bin/ssx/AnnotationCode/Style?language=fr&amp;docVersion=1.1" /><link rel="stylesheet" type="text/css" href="/xwiki/bin/ssx/AnnotationCode/Settings?language=fr&amp;docVersion=1.1" /><link rel="stylesheet" type="text/css" href="/xwiki/bin/ssx/IconThemes/FontAwesome?language=fr&amp;docVersion=1.1" /><link rel="stylesheet" type="text/css" href="/xwiki/bin/ssx/XWiki/Notifications/Code/Macro/NotificationsMacro?language=fr&amp;docVersion=1.1" /><link rel="stylesheet" type="text/css" href="/xwiki/bin/ssx/XWiki/Notifications/Code/NotificationsDisplayerUIX?language=fr&amp;docVersion=1.1" /><link rel="stylesheet" type="text/css" href="/xwiki/bin/ssx/XWiki/SharePage?language=fr&amp;docVersion=1.1" />
+
+    <script type="text/javascript" src="/xwiki/webjars/wiki%3Axwiki/requirejs/2.2.0/require.min.js?r=1"
+  data-wysiwyg="true"></script>
+                                                                                                                                                
+    <script type='text/javascript' src='/xwiki/resources/js/prototype/prototype.js?cache-version=1561454560000'></script>
+<script type='text/javascript' src='/xwiki/bin/skin/resources/js/scriptaculous/effects.js?cache-version=1561454560000' defer='defer'></script>
+<script type='text/javascript' src='/xwiki/bin/skin/resources/js/xwiki/xwiki-min.js?cache-version=1561454562000?defer=false&amp;language=fr'></script>
+<script type='text/javascript' src='/xwiki/bin/skin/skins/flamingo/flamingo.min.js?cache-version=1561454548000?language=fr' defer='defer'></script>
+<script type='text/javascript' src='/xwiki/bin/skin/resources/uicomponents/search/searchSuggest.js?cache-version=1561453700000?h=1992195067' defer='defer'></script>
+<script type='text/javascript' src='/xwiki/bin/skin/resources/uicomponents/async/async.js?cache-version=1561454562000' defer='defer'></script>
+<script type='text/javascript' src='/xwiki/bin/skin/resources/uicomponents/hierarchy/hierarchy.js?cache-version=1561454562000' defer='defer'></script>
+<script type='text/javascript' src='/xwiki/bin/skin/resources/uicomponents/widgets/tree.min.js?cache-version=1561454552000' defer='defer'></script>
+<script type='text/javascript' src='/xwiki/bin/skin/resources/uicomponents/suggest/suggestUsersAndGroups.js?cache-version=1561454562000?language=fr' defer='defer'></script>
+<script type='text/javascript' src='/xwiki/bin/skin/resources/uicomponents/exporter/exporter.js?cache-version=1561454562000' defer='defer'></script>
+<script type='text/javascript' src='/xwiki/bin/skin/resources/uicomponents/viewers/tags.js?cache-version=1561454562000' defer='defer'></script>
+<script type='text/javascript' src='/xwiki/bin/skin/resources/uicomponents/widgets/upload.js?cache-version=1561454562000?language=fr' defer='defer'></script>
+<script type='text/javascript' src='/xwiki/bin/skin/resources/js/xwiki/viewers/attachments.js?cache-version=1561454560000?language=fr' defer='defer'></script>
+<script type='text/javascript' src='/xwiki/bin/skin/resources/uicomponents/viewers/history.js?cache-version=1561454562000' defer='defer'></script>
+
+    <script type='text/javascript' src='/xwiki/bin/jsx/AnnotationCode/Settings?language=fr&amp;docVersion=1.1' defer='defer'></script>
+<script type='text/javascript' src='/xwiki/bin/jsx/TourCode/TourJS?language=fr&amp;docVersion=1.1' defer='defer'></script>
+<script type='text/javascript' src='/xwiki/bin/jsx/AnnotationCode/Script?language=fr&amp;docVersion=1.1' defer='defer'></script>
+<script type='text/javascript' src='/xwiki/bin/jsx/XWiki/GoogleAnalyticsCode?language=fr&amp;docVersion=12.1' defer='defer'></script>
+<script type='text/javascript' src='/xwiki/bin/jsx/IconThemes/FontAwesome?language=fr&amp;docVersion=1.1' defer='defer'></script>
+<script type='text/javascript' src='/xwiki/bin/jsx/XWiki/Notifications/Code/Macro/NotificationsMacro?language=fr&amp;docVersion=1.1' defer='defer'></script>
+<script type='text/javascript' src='/xwiki/bin/jsx/XWiki/Notifications/Code/NotificationsDisplayerUIX?language=fr&amp;docVersion=1.1' defer='defer'></script>
+<script type='text/javascript' src='/xwiki/bin/jsx/XWiki/QuickSearchUIX?language=fr&amp;docVersion=1.1' defer='defer'></script>
+<script type='text/javascript' src='/xwiki/bin/jsx/XWiki/SharePage?language=fr&amp;docVersion=1.1' defer='defer'></script>
+
+
+<script type="text/javascript" src="/xwiki/resources/js/xwiki/compatibility.js?cache-version=1561454560000" defer="defer"></script>
+<script type="text/javascript" src="/xwiki/resources/js/xwiki/markerScript.js?cache-version=1561454560000" defer="defer"></script>
+<!--[if lt IE 9]>
+    <script src="/xwiki/webjars/wiki%3Axwiki/html5shiv/3.7.2/html5shiv.min.js?r=1"></script>
+    <script type="text/javascript" src="/xwiki/webjars/wiki%3Axwiki/respond/1.4.2/dest/respond.min.js?r=1" defer="defer"></script>
+<![endif]-->
+<script type="text/javascript" data-wysiwyg="true">
+// <![CDATA[
+require.config({
+  paths: {
+    'jquery': '/xwiki/webjars/wiki%3Axwiki/jquery/2.2.2/jquery.min.js?r=1',
+    'bootstrap': '/xwiki/webjars/wiki%3Axwiki/bootstrap/3.4.1/js/bootstrap.min.js?r=1',
+    'xwiki-meta': '/xwiki/resources/js/xwiki/meta.js?cache-version=1561454560000',
+    'xwiki-events-bridge': "/xwiki/resources/js/xwiki/eventsBridge.js?cache-version=1561454560000",
+    'iscroll': '/xwiki/webjars/wiki%3Axwiki/iscroll/5.1.3/build/iscroll-lite.js?r=1',
+    'drawer': '/xwiki/webjars/wiki%3Axwiki/drawer/2.4.0/js/jquery.drawer.min.js?r=1',
+    'deferred': "/xwiki/resources/uicomponents/require/deferred.js?cache-version=1561454562000"
+  },
+  shim: {
+    'bootstrap' : ['jquery'],
+    'drawer': ['jquery', 'iscroll']
+  },
+    map: {
+    '*': {
+      'jquery': 'jQueryNoConflict'
+    },
+    'jQueryNoConflict': {
+      'jquery': 'jquery'
+    },
+  }
+});
+define('jQueryNoConflict', ['jquery'], function ($) {
+    return $.noConflict();
+});
+if (window.Prototype && Prototype.BrowserFeatures.ElementExtensions) {
+  require(['jquery', 'bootstrap'], function ($) {
+    // Fix incompatibilities between BootStrap and Prototype
+    var disablePrototypeJS = function (method, pluginsToDisable) {
+      var handler = function (event) {
+        event.target[method] = undefined;
+        setTimeout(function () {
+            delete event.target[method];
+        }, 0);
+      };
+      pluginsToDisable.each(function (plugin) { 
+          $(window).on(method + '.bs.' + plugin, handler); 
+      });
+    },
+    pluginsToDisable = ['collapse', 'dropdown', 'modal', 'tooltip', 'tab', 'popover'];
+    disablePrototypeJS('show', pluginsToDisable);
+    disablePrototypeJS('hide', pluginsToDisable);
+  });
+}
+require(['jquery', 'drawer'], function($) {
+  $(document).ready(function() {
+    $('.drawer-main').closest('body').drawer();
+  });
+});
+window.XWiki = window.XWiki || {};
+XWiki.webapppath = "xwiki/";
+XWiki.servletpath = "bin/";
+XWiki.contextPath = "/xwiki";
+XWiki.mainWiki = "xwiki";
+// Deprecated: replaced by meta data in the HTML element
+XWiki.currentWiki = "xwiki";
+XWiki.currentSpace = "eSeason R\u00E9sa.WebServices.API.WebCampServices.cpg_GetSupplementsForOneStay";
+XWiki.currentPage = "WebHome";
+XWiki.editor = "";
+XWiki.viewer = "";
+XWiki.contextaction = "view";
+XWiki.skin = 'flamingo';
+XWiki.docisnew = false;
+XWiki.docsyntax = "xwiki/2.1";
+XWiki.docvariant = "language=en";
+XWiki.blacklistedSpaces = [ "Import","Panels","Scheduler","Stats","XAppClasses","XAppSheets","XAppTemplates","XWiki","WatchCode","WatchSheets","XApp","WatchAdmin","Watch","ColorThemes","AnnotationCode" ];
+XWiki.hasEdit = false;
+XWiki.hasProgramming = false;
+XWiki.hasBackupPackImportRights = false;
+XWiki.hasRenderer = true;
+window.docviewurl = "/xwiki/bin/view/eSeason%20R%C3%A9sa/WebServices/API/WebCampServices/cpg_GetSupplementsForOneStay/";
+window.docediturl = "/xwiki/bin/edit/eSeason%20R%C3%A9sa/WebServices/API/WebCampServices/cpg_GetSupplementsForOneStay/WebHome";
+window.docsaveurl = "/xwiki/bin/save/eSeason%20R%C3%A9sa/WebServices/API/WebCampServices/cpg_GetSupplementsForOneStay/WebHome";
+window.docgeturl = "/xwiki/bin/get/eSeason%20R%C3%A9sa/WebServices/API/WebCampServices/cpg_GetSupplementsForOneStay/WebHome";
+// ]]>
+</script>
+
+  </head>
+  <body id="body" class="skin-flamingo wiki-xwiki space-eSeason_Résa.WebServices.API.WebCampServices.cpg_GetSupplementsForOneStay viewbody hideright  panel-left-width-Medium panel-right-width-Medium drawer drawer-right drawer-close">
+<div id="xwikimaincontainer">
+<div id="xwikimaincontainerinner">
+
+  <div id="menuview">
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+      <nav class="navbar navbar-default actionmenu">
+    <div class="container-fluid">
+            <div class="navbar-header">
+                  <div id="companylogo">
+  <a href="/xwiki/bin/view/Main/" title="Home" rel="home" class="navbar-brand">
+    <img src="/xwiki/bin/download/FlamingoThemes/Simplex/cropped-eseason-solutions-logicielles-campings.png?rev=1.1" alt="Wiki Logo"/>
+  </a>
+</div>
+
+              </div>
+            <div id="xwikimainmenu">
+    
+          <ul class="nav navbar-nav navbar-left">
+      <li class="divider" role="separator"></li>
+              </ul>
+    
+          <ul class="nav navbar-nav navbar-right">
+        <li>
+    <a class="icon-navbar drawer-toggle" id="tmDrawerActivator" title="Tiroir"><span class="sr-only">Ouvrir/Fermer la navigation</span><span class="fa fa-bars"></span></a>
+  </li>
+                  <li class="navbar-avatar">
+<a href="/xwiki/bin/view/XWiki/reneoltra" class="icon-navbar">
+<span class="sr-only">Profil Utilisateur</span>
+                                <img class='avatar avatar_50' src='/xwiki/bin/skin/resources/icons/xwiki/noavatar.png?cache-version=1561453700000' alt='reneoltra reneoltra' title='reneoltra reneoltra'/></a>
+</li>
+                   
+<li class="dropdown" id="tmNotifications">
+<a class="icon-navbar dropdown-toggle" data-toggle="dropdown" role="button"
+title="Notifications">
+<span class="sr-only">
+Ouvrir/Fermer la navigation
+</span>
+<span class="fa fa-bell"></span>
+</a>
+<ul class="dropdown-menu">
+ <li>
+<div class="notifications-header">
+<div class="clearfix">
+<div class="col-xs-4">
+<p><strong>Notifications</strong></p>
+</div>
+<div class="col-xs-8 text-right">
+<p>
+<span class="notifications-header-link">
+<a href="/xwiki/bin/get/XWiki/Notifications/Code/NotificationRSSService?outputSyntax=plain"
+class="notifications-header-link notifications-rss-link" rel="nofollow external">
+<span class="fa fa-rss"></span>&nbsp;Flux RSS
+</a>
+</span>
+<span class="notifications-header-link">
+<a href="/xwiki/bin/view/XWiki/reneoltra?category=notifications" class="notifications-settings" rel="nofollow">
+<span class="fa fa-cog"></span>&nbsp;Préférences
+</a>
+</span>
+</p>
+</div>
+</div>
+<div class="notifications-toggles clearfix" data-enabled="false">
+<pre>
+<label class="hidden" for="notificationPageOnly">Activer/désactiver les notifications de Page uniquement</label><input type="checkbox" id="notificationPageOnly" name="notificationPageOnly" checked="checked"/><label class="hidden" for="notificationPageAndChildren">Activer/désactiver les notifications de Page et enfants</label><input type="checkbox" id="notificationPageAndChildren" name="notificationPageAndChildren" checked="checked"/><label class="hidden" for="notificationWiki">Activer/désactiver les notifications du Wiki</label><input type="checkbox" id="notificationWiki" name="notificationWiki" checked="checked"/></pre>
+</div>
+<div class="notifications-header-uix col-xs-12">
+</div>
+</div>
+<div class="notifications-area loading clearfix">
+</div>
+</li>
+
+</ul>
+</li>
+                 <li>
+<form class="navbar-form globalsearch globalsearch-close form-inline" id="globalsearch" action="/xwiki/bin/view/Main/Search">
+<label class="hidden" for="headerglobalsearchinput">Rechercher</label>
+<input type="text" name="text" placeholder="Rechercher..." id="headerglobalsearchinput" />
+<button type="submit" class="btn" title="Rechercher"><span class="fa fa-search"></span></button>
+</form>
+</li>
+            </ul>
+    
+          </div>    </div>   </nav>
+  
+  
+
+
+
+
+
+<div class="drawer-main drawer-default" id="tmDrawer">
+  <nav class="drawer-nav">
+  
+                <div class="drawer-brand clearfix">
+      <a href="/xwiki/bin/view/XWiki/reneoltra">
+                                    <img class='avatar avatar_120' src='/xwiki/bin/skin/resources/icons/xwiki/noavatar.png?cache-version=1561453700000' alt='reneoltra reneoltra' title='reneoltra reneoltra'/>      </a>
+      <div class="brand-links">
+                  <a href="/xwiki/bin/view/XWiki/reneoltra" class="brand-user" id="tmUser">reneoltra reneoltra</a>
+          <a href="/xwiki/bin/logout/XWiki/XWikiLogout?xredirect=%2Fxwiki%2Fbin%2Fview%2FeSeason%2520R%25C3%25A9sa%2FWebServices%2FAPI%2FWebCampServices%2Fcpg_GetSupplementsForOneStay%2F" id="tmLogout" rel="nofollow"><span class="fa fa-sign-out"></span> Se déconnecter</a>
+                                                          </div>
+    </div>
+
+                <ul class="drawer-menu">
+                                <li class="drawer-menu-item drawer-category-header"><hr class="hidden"/>eSeason</li>
+                                                                                
+                            
+
+
+
+
+
+  <li class="drawer-menu-item">
+    <a href="/xwiki/bin/view/Main/AllDocs" id="tmWikiDocumentIndex">
+      <div class="drawer-menu-item-icon">
+        <span class="fa fa-book"></span>
+      </div>
+      <div class="drawer-menu-item-text">Liste des documents du Wiki</div>
+    </a>
+  </li>
+                                  
+
+
+
+
+
+  <li class="drawer-menu-item">
+    <a href="/xwiki/bin/view/Applications/" id="tmMainApplicationIndex">
+      <div class="drawer-menu-item-icon">
+        <span class="fa fa-th"></span>
+      </div>
+      <div class="drawer-menu-item-text">Liste des applications</div>
+    </a>
+  </li>
+                                                    <li class="drawer-menu-item drawer-category-header"><hr class="hidden"/>Global</li>
+                                                      <li class="drawer-menu-item">
+    <a id="tmLanguages" role="button" data-toggle="collapse" href="#tmLanguages_menu" aria-expanded="false" aria-controls="tmLanguages_menu">
+      <div class="drawer-menu-item-icon">
+        <span class="fa fa-flag"></span>
+      </div>
+      <div class="drawer-menu-item-text">Langues</div>
+    </a>
+    <ul class="drawer-menu-sub-item collapse" id="tmLanguages_menu">
+    <li class="drawer-menu-item">
+    <a href="/xwiki/bin/view/eSeason%20R%C3%A9sa/WebServices/API/WebCampServices/cpg_GetSupplementsForOneStay/?language=en">
+      <div class="drawer-menu-item-icon">
+        <span class="fa fa-flag"></span>
+      </div>
+      <div class="drawer-menu-item-text">English
+ <span class="fa fa-check"></span></div>
+    </a>
+  </li>
+        </ul>
+  </li>
+
+                                                    
+
+
+
+
+
+  <li class="drawer-menu-item">
+    <a href="/xwiki/bin/view/WikiManager/">
+      <div class="drawer-menu-item-icon">
+        <span class="fa fa-list-alt"></span>
+      </div>
+      <div class="drawer-menu-item-text">Annuaire des Wikis</div>
+    </a>
+  </li>
+                                          
+          </ul>
+  </nav>
+</div>
+
+
+
+
+
+  </div>
+ <div id="headerglobal">
+  <div id="globallinks">
+  </div>   <div class="clearfloats"></div>
+      
+      
+  </div> 
+
+
+<div class="contenthideright" id="contentcontainer">
+<div id="contentcontainerinner">
+<div class="leftsidecolumns">
+  <div id="contentcolumn"> 
+
+        
+  <div class="main">
+  <div id="mainContentArea">
+  
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <ol id="hierarchy" class="breadcrumb breadcrumb-expandable" data-entity='eSeason Résa.WebServices.API.WebCampServices.cpg_GetSupplementsForOneStay.WebHome' data-id='hierarchy' data-limit='5' data-treenavigation='true' data-entities='&#123;Space xwiki:eSeason Résa.WebServices.API.WebCampServices.cpg_GetSupplementsForOneStay=eSeason Résa.WebServices.API.WebCampServices.cpg_GetSupplementsForOneStay.WebHome}'><li
+                  
+                                
+        
+        
+                            class="wiki dropdown"><a href="/xwiki/bin/view/Main/"
+        ><span class="fa fa-home"></span></a><span class='dropdown-toggle' data-toggle='dropdown'><span class="fa fa-caret-down"></span></span><div class='dropdown-menu'>                                                                                                                                                    <div                                                                                         class = "breadcrumb-tree"              data-responsive = "true"              data-url = "/xwiki/bin/get/eSeason%20R%C3%A9sa/WebServices/API/WebCampServices/cpg_GetSupplementsForOneStay/WebHome?outputSyntax=plain&#38;sheet=XWiki.DocumentTree&#38;limit=10"              data-dragAndDrop = "false"              data-contextMenu = "false"              data-icons = "true"              data-edges = "true"              data-checkboxes = "false"              data-openTo = "document:xwiki:eSeason Résa.WebServices.API.WebCampServices.cpg_GetSupplementsForOneStay.WebHome"              data-finder = "false"  ></div>
+</div></li><li                  
+                      
+                        
+        
+                            class="space dropdown"><a href="/xwiki/bin/view/eSeason%20R%C3%A9sa/"
+        >eSeason Resa et Webcamp</a><span class='dropdown-toggle' data-toggle='dropdown'><span class="fa fa-caret-down"></span></span><div class='dropdown-menu'>                                                                                                                                                    <div                                                                                               class = "breadcrumb-tree"              data-responsive = "true"              data-url = "/xwiki/bin/get/eSeason%20R%C3%A9sa/WebServices/API/WebCampServices/cpg_GetSupplementsForOneStay/WebHome?outputSyntax=plain&#38;sheet=XWiki.DocumentTree&#38;limit=10&#38;root=wiki%3Axwiki"              data-dragAndDrop = "false"              data-contextMenu = "false"              data-icons = "true"              data-edges = "true"              data-checkboxes = "false"              data-openTo = "document:xwiki:eSeason Résa.WebHome"              data-finder = "false"  ></div>
+</div></li><li                                    class="ellipsis">&hellip;</li><li                  
+                      
+                                                    
+        
+                            class="space dropdown"><a href="/xwiki/bin/view/eSeason%20R%C3%A9sa/WebServices/API/"
+        >API</a><span class='dropdown-toggle' data-toggle='dropdown'><span class="fa fa-caret-down"></span></span><div class='dropdown-menu'>                                                                                                                                                    <div                                                                                               class = "breadcrumb-tree"              data-responsive = "true"              data-url = "/xwiki/bin/get/eSeason%20R%C3%A9sa/WebServices/API/WebCampServices/cpg_GetSupplementsForOneStay/WebHome?outputSyntax=plain&#38;sheet=XWiki.DocumentTree&#38;limit=10&#38;root=document%3Axwiki%3AeSeason%20R%C3%A9sa.WebServices.WebHome"              data-dragAndDrop = "false"              data-contextMenu = "false"              data-icons = "true"              data-edges = "true"              data-checkboxes = "false"              data-openTo = "document:xwiki:eSeason Résa.WebServices.API.WebHome"              data-finder = "false"  ></div>
+</div></li><li                  
+                      
+                                      
+        
+                            class="space dropdown"><a href="/xwiki/bin/view/eSeason%20R%C3%A9sa/WebServices/API/WebCampServices/"
+        >WebCampServices</a><span class='dropdown-toggle' data-toggle='dropdown'><span class="fa fa-caret-down"></span></span><div class='dropdown-menu'>                                                                                                                                                    <div                                                                                               class = "breadcrumb-tree"              data-responsive = "true"              data-url = "/xwiki/bin/get/eSeason%20R%C3%A9sa/WebServices/API/WebCampServices/cpg_GetSupplementsForOneStay/WebHome?outputSyntax=plain&#38;sheet=XWiki.DocumentTree&#38;limit=10&#38;root=document%3Axwiki%3AeSeason%20R%C3%A9sa.WebServices.API.WebHome"              data-dragAndDrop = "false"              data-contextMenu = "false"              data-icons = "true"              data-edges = "true"              data-checkboxes = "false"              data-openTo = "document:xwiki:eSeason Résa.WebServices.API.WebCampServices.WebHome"              data-finder = "false"  ></div>
+</div></li><li                  
+                      
+                                      
+        
+                                                  class="active space dropdown"><a href="/xwiki/bin/view/eSeason%20R%C3%A9sa/WebServices/API/WebCampServices/cpg_GetSupplementsForOneStay/"
+        >cpg_GetSupplementsForOneStay</a><span class='dropdown-toggle' data-toggle='dropdown'><span class="fa fa-caret-down"></span></span><div class='dropdown-menu'>                                                                                                                                                    <div                                                                                               class = "breadcrumb-tree"              data-responsive = "true"              data-url = "/xwiki/bin/get/eSeason%20R%C3%A9sa/WebServices/API/WebCampServices/cpg_GetSupplementsForOneStay/WebHome?outputSyntax=plain&#38;sheet=XWiki.DocumentTree&#38;limit=10&#38;root=document%3Axwiki%3AeSeason%20R%C3%A9sa.WebServices.API.WebCampServices.WebHome"              data-dragAndDrop = "false"              data-contextMenu = "false"              data-icons = "true"              data-edges = "true"              data-checkboxes = "false"              data-openTo = "document:xwiki:eSeason Résa.WebServices.API.WebCampServices.cpg_GetSupplementsForOneStay.WebHome"              data-finder = "false"  ></div>
+</div>      </li></ol>
+    
+      
+
+
+    
+
+
+
+
+
+
+
+<div class="xcontent">
+  <div class="row document-header">
+  <div class="document-info col-xs-12 col-md-7">
+                    <div id="document-title"><h1>cpg_GetSupplementsForOneStay</h1></div>
+          <div class="xdocLastModification">
+                  Modifié par <span class="wikilink"><a href="/xwiki/bin/view/XWiki/bportenseigne">Bruno PORTENSEIGNE</a></span> le 12/07/2023 10:33:44
+              </div>
+      </div>
+      <div class="document-menu col-xs-12 col-md-5">
+      
+    
+                                          <div id="contentmenu" class="pull-right actionmenu">
+                                    
+                                                            
+                                                  <div class="btn-group" id="tmMoreActions">
+    <a class="btn btn-default dropdown-toggle" title="Plus d'actions"          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+        role="button">
+      <span class="fa fa-ellipsis-v"></span>
+          </a>
+                <ul class="dropdown-menu dropdown-menu-right">
+                                <li class="dropdown-header">Gérer</li>
+                                                                             
+                            <li class=""><a href="/xwiki/bin/view/eSeason%20R%C3%A9sa/WebServices/API/WebCampServices/cpg_GetSupplementsForOneStay/?xpage=copy" id="tmActionCopy" title="Copier" rel="nofollow"><span class="fa fa-copy"></span> Copier</a></li>
+    
+            
+                                                    <li class="divider" role="separator"></li>
+                  <li class="dropdown-header">Actions</li>
+                                                                                            
+      
+                                                              <li class=""><a href="" id="tmExport" title="Exporter" data-toggle="modal" data-target="#exportModal"><span class="fa fa-download"></span> Exporter</a></li>
+    
+                       
+                            <li class=""><a href="/xwiki/bin/view/eSeason%20R%C3%A9sa/WebServices/API/WebCampServices/cpg_GetSupplementsForOneStay/?xpage=print" id="tmPrintPreview" title="Aperçu avant impression" rel="nofollow"><span class="fa fa-print"></span> Aperçu avant impression</a></li>
+    
+                                      <li class=""><a href="/xwiki/bin/view/eSeason%20R%C3%A9sa/WebServices/API/WebCampServices/cpg_GetSupplementsForOneStay/?viewer=code" id="tmViewSource" title="Afficher le code source" rel="nofollow"><span class="fa fa-search"></span> Afficher le code source</a></li>
+    
+                                  <li class=""><a href="/xwiki/bin/view/eSeason%20R%C3%A9sa/WebServices/API/WebCampServices/cpg_GetSupplementsForOneStay/?viewer=share" id="tmActionShare" title="Envoyer par mail" rel="nofollow"><span class="fa fa-envelope-o"></span> Envoyer par mail</a></li>
+          
+        
+            
+                                                                                        <li class="divider" role="separator"></li>
+                      <li class="dropdown-header">Affichage</li>
+          
+                  
+      <li class=""><a href="/xwiki/bin/view/eSeason%20R%C3%A9sa/WebServices/API/WebCampServices/cpg_GetSupplementsForOneStay/?viewer=children" id="tmChildren" title="Pages filles" rel="nofollow"><span class="fa fa-folder"></span> Pages filles</a></li>
+                  
+      <li class=""><a href="/xwiki/bin/view/eSeason%20R%C3%A9sa/WebServices/API/WebCampServices/cpg_GetSupplementsForOneStay/?viewer=attachments" id="tmAttachments" title="Pièces Jointes" rel="nofollow"><span class="fa fa-paperclip"></span> Pièces Jointes</a></li>
+                  
+      <li class=""><a href="/xwiki/bin/view/eSeason%20R%C3%A9sa/WebServices/API/WebCampServices/cpg_GetSupplementsForOneStay/?viewer=history" id="tmHistory" title="Historique" rel="nofollow"><span class="fa fa-clock-o"></span> Historique</a></li>
+
+<script type="text/javascript">
+      //<![CDATA[
+    /**
+     * Perform a PUT on the given REST API. If the request is successful, reload the page.
+     *
+     * We use this function in order to quickly edit the user properties for developer shortcuts.
+     * Also note that JQuery is not supported here, so we use a starndard XMLHttpRequest.
+     *
+     * @param restUrl the URL to use
+     * @param errorMessage the message to display if an error ocurred in the request
+     */
+    var developerShortcutsRestCall = function(restUrl, errorMessage) {
+        const req = new XMLHttpRequest();
+        var notification = new XWiki.widgets.Notification(
+            "Requ\u00EAte REST en cours...",
+            'inprogress');
+
+        req.onreadystatechange = function(event) {
+            if (this.readyState === XMLHttpRequest.DONE) {
+                if (this.status >= 200 && this.status < 300) {
+                    // Reload the page to apply the user modifications
+                    notification.replace(new XWiki.widgets.Notification(
+                        "Requ\u00EAte REST effectu\u00E9e avec succ\u00E8s !", 'done'));
+                    location.reload()
+                } else if (this.status == 500) {
+                    notification.replace(new XWiki.widgets.Notification(this.data, 'error'));
+                } else {
+                    notification.replace(new XWiki.widgets.Notification(errorMessage, 'error'));
+                }
+            }
+        };
+
+        req.open('PUT', restUrl, true);
+        req.send(null);
+    };
+
+    // Append developer shortcuts for toggeling userType and hiddenDocuments in the current user profile
+    shortcut.add("x+x+x+a", function() {
+        developerShortcutsRestCall("/xwiki/rest/currentuser/properties/usertype/next",
+                "Impossible de mettre \u00E0 jour le type d\'utilisateur");
+    }, {'type': shortcut.type.SEQUENCE, 'disable_in_input': true });
+
+    shortcut.add("x+x+x+h", function () {
+        developerShortcutsRestCall("/xwiki/rest/currentuser/properties/displayHiddenDocuments/next",
+                "Impossible de basculer la propri\u00E9t\u00E9 documents cach\u00E9s de utilisateur actuel");
+    }, {'type': shortcut.type.SEQUENCE, 'disable_in_input': true });
+    //]]>
+  </script>
+
+                              
+      </ul>
+      </div>
+              
+
+
+
+
+
+
+
+
+
+
+
+          <div class="modal fade text-left" id="exportModal" tabindex="-1" role="dialog" aria-labelledby="exportModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <div class="modal-title" id="exportModalLabel">Exporter</div>
+        </div>
+        <div class="modal-body">
+          <div class="panel-group" id="exportModelAccordion" role="tablist" aria-multiselectable="true">
+                          <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="exportModalHeadingOffice">
+      <div class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#exportModelAccordion" href="#exportModelOfficeCollapse" aria-expanded="true" aria-controls="exportModelOfficeCollapse">
+          Formats Office
+        </a>
+      </div>
+    </div>
+    <div id="exportModelOfficeCollapse" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="exportModalHeadingOffice">
+      <div class="panel-body">
+        <a href="/xwiki/bin/view/eSeason%20R%C3%A9sa/WebServices/API/WebCampServices/cpg_GetSupplementsForOneStay/?xpage=pdfoptions&amp;qs=" class="btn btn-primary" rel="nofollow">Exporter en PDF</a>
+                      </div>
+    </div>
+  </div>
+              <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="exportModalHeadingOther">
+      <div class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#exportModelAccordion" href="#exportModelOtherCollapse" aria-expanded="false" aria-controls="exportModelOtherCollapse">
+          Autres formats
+        </a>
+      </div>
+    </div>
+    <div id="exportModelOtherCollapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="exportModalHeadingOther">
+      <div class="panel-body">
+                  <div class="row">
+            <div class="col-xs-6">
+              <p>Sélectionnez les pages à exporter :</p>
+            </div>
+            <div class="col-xs-6">
+              <p class="text-right"><a href="#" class="tree_select_all">Sélectionner tout</a> / <a href="#" class="tree_select_none">aucun</a></p>
+            </div>
+          </div>
+          <div class="exportModalTreeContainer">
+                                                                                                                                                                                                                <div                                                                                                 class = "xtree jstree-no-links"              data-responsive = "true"              data-url = "/xwiki/bin/get/eSeason%20R%C3%A9sa/WebServices/API/WebCampServices/cpg_GetSupplementsForOneStay/WebHome?outputSyntax=plain&#38;sheet=XWiki.DocumentTree&#38;filterHiddenDocuments=false&#38;showAttachments=false&#38;showTranslations=false&#38;root=document%3Axwiki%3AeSeason%20R%C3%A9sa.WebServices.API.WebCampServices.cpg_GetSupplementsForOneStay.WebHome&#38;showRoot=true"              data-dragAndDrop = "true"              data-contextMenu = "true"              data-icons = "true"              data-edges = "true"              data-checkboxes = "true"              data-openTo = ""              data-finder = "false"  ></div>
+          </div>
+                <a href="/xwiki/bin/export/eSeason%20R%C3%A9sa/WebServices/API/WebCampServices/cpg_GetSupplementsForOneStay/WebHome?format=html" class="btn btn-primary" rel="nofollow">Exporter en HTML</a>
+                      </div>
+    </div>
+  </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+            
+              
+
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+<hr/>
+
+            
+        <div class="row">
+    <div id="xwikicontent" class="col-xs-12">
+              <p>Renvoie la liste des suppléments pour un séjour donné</p><hr/><ul><li><span class="wikilink"><a href="#HRequest">Request</a></span><ul><li><span class="wikilink"><a href="#HMapping">Mapping</a></span></li></ul></li><li><span class="wikilink"><a href="#HResponse">Response</a></span><ul><li><span class="wikilink"><a href="#HMapping-1">Mapping</a></span></li></ul></li></ul><hr/><h2 id="HRequest" class="wikigeneratedid"><span>Request</span></h2><div class="box"><div class="code"><span style="font-weight: bold; color: #008000; ">&lt;soapenv:Envelope</span> <span style="color: #7D9029; ">xmlns:soapenv=</span><span style="color: #BA2121; ">"http://schemas.xmlsoap.org/soap/envelope/"</span> <span style="color: #7D9029; ">xmlns:web=</span><span style="color: #BA2121; ">"http://webservices.webcamp.fr"</span><span style="font-weight: bold; color: #008000; ">&gt;</span><br/> &nbsp;&nbsp;<span style="font-weight: bold; color: #008000; ">&lt;soapenv:Header/&gt;</span><br/> &nbsp;&nbsp;<span style="font-weight: bold; color: #008000; ">&lt;soapenv:Body&gt;</span><br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-weight: bold; color: #008000; ">&lt;web:cpg_GetSupplementsForOneStay&gt;</span><br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-weight: bold; color: #008000; ">&lt;RequestCpgGetSupplementsForOneStay_1&gt;</span><br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-weight: bold; color: #008000; ">&lt;idUser&gt;</span>?<span style="font-weight: bold; color: #008000; ">&lt;/idUser&gt;</span><br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-weight: bold; color: #008000; ">&lt;password&gt;</span>?<span style="font-weight: bold; color: #008000; ">&lt;/password&gt;</span><br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-weight: bold; color: #008000; ">&lt;idStay&gt;</span><br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-weight: bold; color: #008000; ">&lt;beginDate&gt;</span>?<span style="font-weight: bold; color: #008000; ">&lt;/beginDate&gt;</span><br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-weight: bold; color: #008000; ">&lt;endDate&gt;</span>?<span style="font-weight: bold; color: #008000; ">&lt;/endDate&gt;</span><br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-weight: bold; color: #008000; ">&lt;idProduct&gt;</span><br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-weight: bold; color: #008000; ">&lt;id1&gt;</span>?<span style="font-weight: bold; color: #008000; ">&lt;/id1&gt;</span><br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-weight: bold; color: #008000; ">&lt;idProduct&gt;</span>?<span style="font-weight: bold; color: #008000; ">&lt;/idProduct&gt;</span><br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-weight: bold; color: #008000; ">&lt;/idProduct&gt;</span><br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-weight: bold; color: #008000; ">&lt;id2&gt;</span>?<span style="font-weight: bold; color: #008000; ">&lt;/id2&gt;</span><br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-weight: bold; color: #008000; ">&lt;idTariff&gt;</span><br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-weight: bold; color: #008000; ">&lt;id1&gt;</span>?<span style="font-weight: bold; color: #008000; ">&lt;/id1&gt;</span><br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-weight: bold; color: #008000; ">&lt;idTariffProduct&gt;</span>?<span style="font-weight: bold; color: #008000; ">&lt;/idTariffProduct&gt;</span><br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-weight: bold; color: #008000; ">&lt;/idTariff&gt;</span><br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-weight: bold; color: #008000; ">&lt;/idStay&gt;</span><br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-weight: bold; color: #008000; ">&lt;/RequestCpgGetSupplementsForOneStay_1&gt;</span><br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-weight: bold; color: #008000; ">&lt;/web:cpg_GetSupplementsForOneStay&gt;</span><br/> &nbsp;&nbsp;<span style="font-weight: bold; color: #008000; ">&lt;/soapenv:Body&gt;</span><br/><span style="font-weight: bold; color: #008000; ">&lt;/soapenv:Envelope&gt;</span></div></div><h3 id="HMapping" class="wikigeneratedid"><span>Mapping</span></h3><table class="table table-bordered"><tr><th scope="col">Name</th><th scope="col">Type</th><th scope="col">Mandatory</th><th scope="col">Default</th><th scope="col">Repetitions</th><th scope="col">Comment</th></tr><tr><td><span class="wikilink"><a href="/xwiki/bin/view/eSeason%20WebCamp/WebServices/Terms/#HidUser">idUser</a></span></td><td>String</td><td>yes</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td><span class="wikilink"><a href="/xwiki/bin/view/eSeason%20WebCamp/WebServices/Terms/#Hpassword">password</a></span></td><td>String</td><td>yes</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>idStay</td><td><span class="wikilink"><a href="/xwiki/bin/view/eSeason%20WebCamp/WebServices/Types/#HIdStay">IdStay</a></span></td><td>yes</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></table><h2 id="HResponse" class="wikigeneratedid"><span>Response</span></h2><p>Exemple de réponse complète :</p><div class="box"><div class="code"><span style="font-weight: bold; color: #008000; ">&lt;env:Envelope</span> <span style="color: #7D9029; ">xmlns:env=</span><span style="color: #BA2121; ">"http://schemas.xmlsoap.org/soap/envelope/"</span><span style="font-weight: bold; color: #008000; ">&gt;</span><br/> &nbsp;&nbsp;&nbsp;<span style="font-weight: bold; color: #008000; ">&lt;env:Header/&gt;</span><br/> &nbsp;&nbsp;&nbsp;<span style="font-weight: bold; color: #008000; ">&lt;env:Body&gt;</span><br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-weight: bold; color: #008000; ">&lt;web:cpg_GetSupplementsForOneStayResponse</span> <span style="color: #7D9029; ">xmlns:web=</span><span style="color: #BA2121; ">"http://webservices.webcamp.fr"</span><span style="font-weight: bold; color: #008000; ">&gt;</span><br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-weight: bold; color: #008000; ">&lt;result</span> <span style="color: #7D9029; ">xmlns:xsi=</span><span style="color: #BA2121; ">"http://www.w3.org/2001/XMLSchema-instance"</span><span style="font-weight: bold; color: #008000; ">&gt;</span><br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-weight: bold; color: #008000; ">&lt;idUser&gt;</span>?<span style="font-weight: bold; color: #008000; ">&lt;/idUser&gt;</span><br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-weight: bold; color: #008000; ">&lt;error&gt;</span>0<span style="font-weight: bold; color: #008000; ">&lt;/error&gt;</span><br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-weight: bold; color: #008000; ">&lt;supplements&gt;</span><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;....<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-weight: bold; color: #008000; ">&lt;/supplements&gt;</span><br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-weight: bold; color: #008000; ">&lt;supplements&gt;</span><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;....<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-weight: bold; color: #008000; ">&lt;/supplements&gt;</span><br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-weight: bold; color: #008000; ">&lt;/result&gt;</span><br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-weight: bold; color: #008000; ">&lt;/web:cpg_GetSupplementsForOneStayResponse&gt;</span><br/> &nbsp;&nbsp;&nbsp;<span style="font-weight: bold; color: #008000; ">&lt;/env:Body&gt;</span><br/><span style="font-weight: bold; color: #008000; ">&lt;/env:Envelope&gt;</span></div></div><h3 id="HMapping-1" class="wikigeneratedid"><span>Mapping</span></h3><table class="table table-bordered"><tr><th scope="col">Name</th><th scope="col">Type</th><th scope="col">Comment</th></tr><tr><td><span class="wikilink"><a href="/xwiki/bin/view/eSeason%20WebCamp/WebServices/Terms/#HidUser">idUser</a></span></td><td>string</td><td>&nbsp;</td></tr><tr><td><span class="wikilink"><a href="/xwiki/bin/view/eSeason%20WebCamp/WebServices/Types/#HErrors">error</a></span></td><td>int</td><td>&nbsp;</td></tr><tr><td>messError</td><td>string</td><td>Détail de l'erreur si <span class="box">error &lt;&gt; 0</span>.</td></tr><tr><td>supplement</td><td><span class="wikilink"><a href="/xwiki/bin/view/WebCamp/WebServices/Types/#HSupplement">Supplement</a></span></td><td>&nbsp;</td></tr></table>
+          </div>
+  </div>
+</div>
+
+
+
+
+
+    <div class="clearfloats"></div>
+  </div>            <div id="xdocFooter">
+  
+       <div class="doc-tags" id="xdocTags">
+        Tags :
+        </div>
+  
+  <div id="xdocAuthors">
+    <div class="xdocCreation">       Créé par <span class="wikilink"><a href="/xwiki/bin/view/XWiki/bportenseigne">Bruno PORTENSEIGNE</a></span> le 26/01/2022 12:27:02<br/>
+          </div>
+  </div>
+</div>
+
+              <div id="xwikidata">
+          
+    
+    
+    
+                        
+          <div id="docextraanchors">
+  <span id="Attachmentsanchor">&nbsp;</span><span id="Historyanchor">&nbsp;</span>  </div>
+  <div id="xwikidatacontents">
+    <div class="floatcontainer" id="docExtraTabs">
+      <ul class="xwikitabbar" id="docExtrasTabsUl">
+                  <li id="Attachmentstab">
+                        <a id="Attachmentslink" href="/xwiki/bin/view/eSeason%20R%C3%A9sa/WebServices/API/WebCampServices/cpg_GetSupplementsForOneStay/?viewer=attachments" rel="nofollow">
+              Pièces Jointes  <span class="itemCount">(0)</span>             </a>
+          </li>
+                  <li id="Historytab">
+                        <a id="Historylink" href="/xwiki/bin/view/eSeason%20R%C3%A9sa/WebServices/API/WebCampServices/cpg_GetSupplementsForOneStay/?viewer=history" rel="nofollow">
+              Historique             </a>
+          </li>
+              </ul>
+    </div>
+                <div id="docextrapanes">
+              <div id="Attachmentspane" class="hidden empty"></div>
+              <div id="Historypane" class="hidden empty"></div>
+          </div>
+                <script type="text/javascript">
+      var hashviewer = self.document.location.hash.substring(1);
+                                                var extraInit = function(){ XWiki.displayDocExtra("Attachments", "attachmentsinline.vm", false) };
+                if (hashviewer == "Attachments") {
+          var extraInit = function(){ XWiki.displayDocExtra("Attachments", "attachmentsinline.vm", true) };
+        }
+                                if ($("Attachmentslink") != null) {
+          $("Attachmentslink").href="#Attachments";
+          Event.observe($("Attachmentslink"), "click", function(){ XWiki.displayDocExtra("Attachments", "attachmentsinline.vm", false); }, false);
+        }
+                                if ($("tmShowAttachments") != null) {
+          $("tmShowAttachments").href="#Attachments";
+          Event.observe($("tmShowAttachments"), "click", function(){ XWiki.displayDocExtra("Attachments", "attachmentsinline.vm", true); }, false);
+        }
+                                if ($("attachmentsshortcut") != null) {
+          $("attachmentsshortcut").down('a').href="#attachments";
+          Event.observe($("attachmentsshortcut"), "click", function(){ XWiki.displayDocExtra("Attachments", "attachmentsinline.vm", true); }, false);
+        }
+                                                                              if (hashviewer == "History") {
+          var extraInit = function(){ XWiki.displayDocExtra("History", "historyinline.vm", true) };
+        }
+                                if ($("Historylink") != null) {
+          $("Historylink").href="#History";
+          Event.observe($("Historylink"), "click", function(){ XWiki.displayDocExtra("History", "historyinline.vm", false); }, false);
+        }
+                                if ($("tmShowHistory") != null) {
+          $("tmShowHistory").href="#History";
+          Event.observe($("tmShowHistory"), "click", function(){ XWiki.displayDocExtra("History", "historyinline.vm", true); }, false);
+        }
+                                if ($("historyshortcut") != null) {
+          $("historyshortcut").down('a').href="#history";
+          Event.observe($("historyshortcut"), "click", function(){ XWiki.displayDocExtra("History", "historyinline.vm", true); }, false);
+        }
+                                            document.observe("dom:loaded", extraInit, false);
+    </script>
+  </div> </div>  
+        </div>      </div><div id="leftPanels" class="panels left panel-width-Medium">
+      <div class="panel expanded PanelsNavigation Navigation"><h1 class="xwikipaneltitle">Navigation</h1><div class="xwikipanelcontents">
+
+
+
+
+
+
+
+                                                                                                                                                                      <div                                                                                         class = "xtree"              data-responsive = "true"              data-url = "/xwiki/bin/get/eSeason%20R%C3%A9sa/WebServices/API/WebCampServices/cpg_GetSupplementsForOneStay/WebHome?outputSyntax=plain&#38;sheet=XWiki.DocumentTree&#38;showAttachments=false&#38;showTranslations=false&#38;exclusions=document%3Axwiki%3AMain.WebHome&#38;exclusions=document%3Axwiki%3AHome.WebHome&#38;exclusions=document%3Axwiki%3ASandbox.WebHome&#38;exclusions=document%3Axwiki%3AXWiki.WebHome&#38;exclusions=document%3Axwiki%3AMenu.WebHome"              data-dragAndDrop = "false"              data-contextMenu = "false"              data-icons = "false"              data-edges = "false"              data-checkboxes = "false"              data-openTo = "document:xwiki:eSeason Résa.WebServices.API.WebCampServices.cpg_GetSupplementsForOneStay.WebHome"              data-finder = "false"  ></div></div></div>
+  </div>
+
+  </div>
+<div class="clearfloats"></div>
+  </div></div><div id="footerglobal">
+  <div id="xwikilicence">La Suite eSeason</div>
+              <div id="xwikiplatformversion">Vous avez un problème de connexion ou une question sur notre centre d'aide ? Contactez-nous sur centre-aide-eseason@sequoiasoft.com</div>
+  </div>
+
+</div></div></body>
+</html>
