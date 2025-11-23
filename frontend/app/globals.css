@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #c9a227;
+  --color-primary-hover: #b08d1f;
+  --color-secondary: #1a1a1a;
+  --color-surface: #ffffff;
+  --color-text: #333333;
+  --color-text-light: #666666;
+  --color-border: #e5e7eb;
+
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-playfair);
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-serif);
+  color: var(--color-secondary);
+}
+
+.btn-primary {
+  @apply bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-hover transition-colors duration-300 shadow-md;
+}
+
+.btn-secondary {
+  @apply bg-white text-secondary border border-border px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors duration-300;
+}
+
+.card {
+  @apply bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100;
+}
+
+.input-field {
+  @apply w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all;
+}

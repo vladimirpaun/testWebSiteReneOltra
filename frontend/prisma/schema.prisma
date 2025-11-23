@@ -1,0 +1,74 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String    @id @default(cuid())
+  email     String    @unique
+  password  String
+  firstName String?
+  lastName  String?
+  phone     String?
+  address   String?
+  city      String?
+  country   String?
+  bookings  Booking[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+model Stay {
+  id          String   @id @default(cuid())
+  name        String
+  type        String   // e.g., "Mobil-home", "Emplacement"
+  capacity    Int
+  surface     Int?
+  rooms       Int?
+  bathrooms   Int?
+  description String?
+  basePrice   Float
+  images      String?  // JSON string of image URLs
+  bookings    Booking[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Supplement {
+  id          String    @id @default(cuid())
+  name        String
+  price       Float
+  type        String    // e.g., "Sheet", "Cleaning"
+  bookings    BookingSupplement[]
+}
+
+model Booking {
+  id          String    @id @default(cuid())
+  userId      String
+  user        User      @relation(fields: [userId], references: [id])
+  stayId      String
+  stay        Stay      @relation(fields: [stayId], references: [id])
+  startDate   DateTime
+  endDate     DateTime
+  status      String    // "PENDING", "CONFIRMED", "CANCELLED"
+  totalPrice  Float
+  supplements BookingSupplement[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model BookingSupplement {
+  id           String     @id @default(cuid())
+  bookingId    String
+  booking      Booking    @relation(fields: [bookingId], references: [id])
+  supplementId String
+  supplement   Supplement @relation(fields: [supplementId], references: [id])
+  quantity     Int        @default(1)
+}

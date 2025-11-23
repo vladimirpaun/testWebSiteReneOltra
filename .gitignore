@@ -10,3 +10,4 @@ frontend/.vercel
 frontend/.env
 frontend/.env.*
 frontend/dev.db
+frontend/prisma/dev.db
