@@ -9,7 +9,7 @@ L'application est construite sur une architecture **Full Stack** moderne utilisa
 ### Stack Technique
 -   **Frontend & Backend Framework** : Next.js 16 (App Router)
 -   **Langage** : TypeScript
--   **Base de Données** : SQLite (fichier local `dev.db` pour le développement)
+-   **Base de Données** : PostgreSQL (Vercel Postgres en production, mêmes connexions en local via `.env`)
 -   **ORM** : Prisma v5
 -   **Styling** : Tailwind CSS v4
 -   **Composants UI** : React Server Components (RSC) & Client Components
@@ -25,7 +25,7 @@ L'application est construite sur une architecture **Full Stack** moderne utilisa
 -   `lib/` : Utilitaires (ex: instance Prisma singleton).
 -   `prisma/` : **Couche de Données**.
     -   `schema.prisma` : Définition des tables de la base de données.
-    -   `dev.db` : Le fichier de base de données SQLite.
+    -   `migrations/` : Scripts SQL générés pour PostgreSQL (déployés via `prisma migrate deploy`).
 -   `public/` : Assets statiques (images, icônes).
 
 > **Note sur l'Architecture Backend** :
