@@ -98,7 +98,7 @@ export function BookingForm({ stay, supplements, searchParams }: BookingFormProp
     }
 
     return (
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
             {/* Left Column: Steps */}
             <div className="lg:col-span-2 space-y-8">
                 {step === 1 && (
@@ -132,7 +132,7 @@ export function BookingForm({ stay, supplements, searchParams }: BookingFormProp
                             ))}
                         </div>
                         <div className="mt-6 flex justify-end">
-                            <Button onClick={() => setStep(2)}>Continuer</Button>
+                            <Button onClick={() => setStep(2)} className="w-full sm:w-auto">Continuer</Button>
                         </div>
                     </Card>
                 )}
@@ -149,9 +149,9 @@ export function BookingForm({ stay, supplements, searchParams }: BookingFormProp
                             <Input label="Ville" name="city" value={guestDetails.city} onChange={handleGuestChange} />
                             <Input label="Pays" name="country" value={guestDetails.country} onChange={handleGuestChange} />
                         </div>
-                        <div className="mt-6 flex justify-between">
-                            <Button variant="secondary" onClick={() => setStep(1)}>Retour</Button>
-                            <Button onClick={() => setStep(3)}>Continuer vers le paiement</Button>
+                        <div className="mt-6 flex flex-col sm:flex-row gap-3 sm:gap-0 sm:justify-between">
+                            <Button variant="secondary" onClick={() => setStep(1)} className="w-full sm:w-auto">Retour</Button>
+                            <Button onClick={() => setStep(3)} className="w-full sm:w-auto">Continuer vers le paiement</Button>
                         </div>
                     </Card>
                 )}
@@ -168,9 +168,9 @@ export function BookingForm({ stay, supplements, searchParams }: BookingFormProp
                             </div>
                             <Input label="Numéro de carte (Simulé)" placeholder="0000 0000 0000 0000" disabled />
                         </div>
-                        <div className="mt-6 flex justify-between">
-                            <Button variant="secondary" onClick={() => setStep(2)}>Retour</Button>
-                            <Button onClick={handleSubmit} disabled={loading}>
+                        <div className="mt-6 flex flex-col sm:flex-row gap-3 sm:gap-0 sm:justify-between">
+                            <Button variant="secondary" onClick={() => setStep(2)} className="w-full sm:w-auto">Retour</Button>
+                            <Button onClick={handleSubmit} disabled={loading} className="w-full sm:w-auto">
                                 {loading ? <Loader2 className="animate-spin mr-2" /> : null}
                                 Payer et Réserver ({totalPrice}€)
                             </Button>
@@ -181,7 +181,7 @@ export function BookingForm({ stay, supplements, searchParams }: BookingFormProp
 
             {/* Right Column: Summary */}
             <div className="lg:col-span-1">
-                <Card className="p-6 sticky top-24">
+                <Card className="p-6 lg:sticky top-24">
                     <h3 className="text-xl font-serif font-bold mb-4">Récapitulatif</h3>
                     <div className="space-y-4 text-sm">
                         <div className="flex justify-between">

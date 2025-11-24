@@ -22,7 +22,7 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[80vh] flex items-center justify-center">
+      <section className="relative min-h-[70vh] flex items-center justify-center">
         <div
           className="absolute inset-0 z-0"
           style={{
@@ -43,15 +43,15 @@ export default function Home() {
           </p>
 
           {/* Search Form */}
-          <div className="bg-white p-6 rounded-xl shadow-2xl max-w-3xl mx-auto">
-            <form onSubmit={handleSearch} className="grid grid-cols-1 md:grid-cols-4 gap-4 items-end">
-              <div className="md:col-span-1">
-                <label className="block text-left text-sm font-medium text-gray-700 mb-1">Arrivée</label>
+          <div className="bg-white/95 backdrop-blur p-5 sm:p-6 rounded-2xl shadow-2xl max-w-3xl mx-auto border border-white/40">
+            <form onSubmit={handleSearch} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 items-end">
+              <div className="sm:col-span-1">
+                <label className="block text-left text-sm font-medium text-gray-700 mb-2">Arrivée</label>
                 <div className="relative">
                   <Calendar className="absolute left-3 top-3.5 h-5 w-5 text-gray-400" />
                   <input
                     type="date"
-                    className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#c9a227] outline-none text-gray-900"
+                    className="w-full h-12 pl-10 pr-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#c9a227] outline-none text-gray-900 bg-white"
                     value={startDate}
                     onChange={(e) => setStartDate(e.target.value)}
                     required
@@ -59,13 +59,13 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="md:col-span-1">
-                <label className="block text-left text-sm font-medium text-gray-700 mb-1">Départ</label>
+              <div className="sm:col-span-1">
+                <label className="block text-left text-sm font-medium text-gray-700 mb-2">Départ</label>
                 <div className="relative">
                   <Calendar className="absolute left-3 top-3.5 h-5 w-5 text-gray-400" />
                   <input
                     type="date"
-                    className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#c9a227] outline-none text-gray-900"
+                    className="w-full h-12 pl-10 pr-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#c9a227] outline-none text-gray-900 bg-white"
                     value={endDate}
                     onChange={(e) => setEndDate(e.target.value)}
                     required
@@ -73,12 +73,12 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="md:col-span-1">
-                <label className="block text-left text-sm font-medium text-gray-700 mb-1">Voyageurs</label>
+              <div className="sm:col-span-1">
+                <label className="block text-left text-sm font-medium text-gray-700 mb-2">Voyageurs</label>
                 <div className="relative">
                   <Users className="absolute left-3 top-3.5 h-5 w-5 text-gray-400" />
                   <select
-                    className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#c9a227] outline-none text-gray-900 appearance-none bg-white"
+                    className="w-full h-12 pl-10 pr-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#c9a227] outline-none text-gray-900 appearance-none bg-white"
                     value={guests}
                     onChange={(e) => setGuests(e.target.value)}
                   >
@@ -89,8 +89,8 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="md:col-span-1">
-                <Button type="submit" className="w-full h-[50px]">
+              <div className="sm:col-span-1">
+                <Button type="submit" className="w-full h-12 rounded-xl text-base">
                   Rechercher
                 </Button>
               </div>
