@@ -7,8 +7,8 @@ Next.js 16 (App Router) app with Prisma and PostgreSQL. This is ready for Vercel
 - Do **not** pick Edge Config or Blob; they are not databases. KV/Redis/Supabase/Turso are other stores, but this code is built for Postgres.
 
 ## Required environment variables
-- `DATABASE_URL` → pooled connection string (on Vercel: `POSTGRES_PRISMA_URL`)
-- `DIRECT_URL` → non-pooled connection string (on Vercel: `POSTGRES_URL_NON_POOLING`)
+- Preferred: `DATABASE_URL` = pooled URL, `DIRECT_URL` = non-pooled URL (on Vercel: `POSTGRES_PRISMA_URL` and `POSTGRES_URL_NON_POOLING`).
+- If your Vercel Postgres only shows `POSTGRES_URL` and `PRISMA_DATABASE_URL` (the latter starts with `prisma+postgres://`): use `POSTGRES_URL` for **both** `DATABASE_URL` and `DIRECT_URL` (the `prisma+postgres://` proxy URL does not work with `prisma migrate deploy`).
 - Copy `.env.example` to `.env` and replace with your own strings.
 
 ## Local setup (with the Vercel Postgres connection)
@@ -25,9 +25,10 @@ Tip: If your project already exists on Vercel, pull env vars locally with `verce
 ## Deploy on Vercel (step by step)
 1) **Create project**: Import the repo into Vercel.  
 2) **Add database**: In Vercel → Storage (or Marketplace) → choose **Prisma Postgres**. Vercel will create `POSTGRES_PRISMA_URL` (pooled) and `POSTGRES_URL_NON_POOLING` (direct) env vars.  
+   - If you only see `POSTGRES_URL` and `PRISMA_DATABASE_URL`, map: `DATABASE_URL` = `POSTGRES_URL`, `DIRECT_URL` = `POSTGRES_URL`.  
 3) **Map env vars** in Project Settings → Environment Variables:  
-   - `DATABASE_URL` = `POSTGRES_PRISMA_URL`  
-   - `DIRECT_URL` = `POSTGRES_URL_NON_POOLING`  
+   - `DATABASE_URL` = `POSTGRES_PRISMA_URL` (or `POSTGRES_URL` if that’s the only Postgres URL you have)  
+   - `DIRECT_URL` = `POSTGRES_URL_NON_POOLING` (or `POSTGRES_URL` if that’s the only Postgres URL you have)  
 4) **Build command**: Vercel auto-detects and runs `npm run vercel-build` (which runs `prisma migrate deploy` then `next build`). If it doesn’t, set the Build Command manually to `npm run vercel-build`.  
 5) **Redeploy**: Trigger a deploy (push to main or “Deploy” in the dashboard). Migrations run before the Next.js build.  
 6) **(Optional) Seed production**: After deploy, run `vercel env pull .env.production && vercel exec --prod npx prisma db seed` (or run locally with the prod URLs) to insert the sample data.

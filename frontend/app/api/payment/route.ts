@@ -97,8 +97,8 @@ export async function GET(request: Request) {
                 libcateg: booking.stay.name,
                 begin: booking.startDate,
                 end: booking.endDate,
-                lastName: booking.user.name.split(' ')[1] || '',
-                firstName: booking.user.name.split(' ')[0] || '',
+                lastName: booking.user.lastName || '',
+                firstName: booking.user.firstName || '',
                 price: booking.totalPrice,
                 email: booking.user.email,
                 // Add other fields as needed
