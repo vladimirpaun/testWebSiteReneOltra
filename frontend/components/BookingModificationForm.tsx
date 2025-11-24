@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/Button'
 import { Input } from '@/components/ui/Input'
 import { Card } from '@/components/ui/Card'
 import { useRouter } from 'next/navigation'
-import { Loader2, Calendar, Users, ShoppingBag } from 'lucide-react'
+import { Loader2, Calendar, ShoppingBag, Ban } from 'lucide-react'
 
 interface BookingModificationFormProps {
     booking: any
@@ -16,6 +16,7 @@ export default function BookingModificationForm({ booking, allSupplements }: Boo
     const router = useRouter()
     const [loading, setLoading] = useState(false)
     const [message, setMessage] = useState<{ type: 'success' | 'error', text: string } | null>(null)
+    const isLocked = booking.status === 'CANCELLED'
 
     // State for modifications
     const [startDate, setStartDate] = useState(new Date(booking.startDate).toISOString().split('T')[0])
@@ -33,6 +34,10 @@ export default function BookingModificationForm({ booking, allSupplements }: Boo
     )
 
     const handleUpdateDates = async () => {
+        if (isLocked) {
+            setMessage({ type: 'error', text: 'Cette réservation est annulée. Les modifications sont désactivées.' })
+            return
+        }
         setLoading(true)
         setMessage(null)
         try {
@@ -61,6 +66,10 @@ export default function BookingModificationForm({ booking, allSupplements }: Boo
     }
 
     const handleUpdateSupplements = async () => {
+        if (isLocked) {
+            setMessage({ type: 'error', text: 'Cette réservation est annulée. Les modifications sont désactivées.' })
+            return
+        }
         setLoading(true)
         setMessage(null)
         try {
@@ -91,6 +100,31 @@ export default function BookingModificationForm({ booking, allSupplements }: Boo
         }
     }
 
+    const handleCancelBooking = async () => {
+        const confirmCancel = confirm('Confirmer l’annulation de cette réservation ?')
+        if (!confirmCancel) return
+
+        setLoading(true)
+        setMessage(null)
+        try {
+            const res = await fetch(`/api/booking/${booking.id}/cancel`, {
+                method: 'POST'
+            })
+
+            if (!res.ok) {
+                const data = await res.json()
+                throw new Error(data.error || 'Erreur lors de l’annulation')
+            }
+
+            setMessage({ type: 'success', text: 'Réservation annulée.' })
+            router.refresh()
+        } catch (err: any) {
+            setMessage({ type: 'error', text: err.message })
+        } finally {
+            setLoading(false)
+        }
+    }
+
     const updateSupplementQuantity = (id: string, delta: number) => {
         setSelectedSupplements(prev => {
             const current = prev[id] || 0
@@ -106,6 +140,11 @@ export default function BookingModificationForm({ booking, allSupplements }: Boo
                     {message.text}
                 </div>
             )}
+            {isLocked && (
+                <div className="p-4 rounded-lg bg-amber-50 text-amber-800 border border-amber-100">
+                    Réservation annulée : modification des dates et options désactivée.
+                </div>
+            )}
 
             {/* Dates Modification */}
             <Card className="p-6">
@@ -119,15 +158,17 @@ export default function BookingModificationForm({ booking, allSupplements }: Boo
                         type="date"
                         value={startDate}
                         onChange={(e) => setStartDate(e.target.value)}
+                        disabled={isLocked}
                     />
                     <Input
                         label="Départ"
                         type="date"
                         value={endDate}
                         onChange={(e) => setEndDate(e.target.value)}
+                        disabled={isLocked}
                     />
                 </div>
-                <Button onClick={handleUpdateDates} disabled={loading} className="w-full">
+                <Button onClick={handleUpdateDates} disabled={loading || isLocked} className="w-full">
                     {loading ? <Loader2 className="animate-spin" /> : 'Mettre à jour les dates'}
                 </Button>
             </Card>
@@ -148,19 +189,41 @@ export default function BookingModificationForm({ booking, allSupplements }: Boo
                             <div className="flex items-center gap-3">
                                 <button
                                     onClick={() => updateSupplementQuantity(supp.id, -1)}
-                                    className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-50"
+                                    className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-50 disabled:opacity-50"
+                                    disabled={isLocked}
                                 >-</button>
                                 <span className="w-4 text-center">{selectedSupplements[supp.id] || 0}</span>
                                 <button
                                     onClick={() => updateSupplementQuantity(supp.id, 1)}
-                                    className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-50"
+                                    className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-50 disabled:opacity-50"
+                                    disabled={isLocked}
                                 >+</button>
                             </div>
                         </div>
                     ))}
                 </div>
-                <Button onClick={handleUpdateSupplements} disabled={loading} className="w-full">
+                <Button onClick={handleUpdateSupplements} disabled={loading || isLocked} className="w-full">
                     {loading ? <Loader2 className="animate-spin" /> : 'Mettre à jour les options'}
+                </Button>
+            </Card>
+
+            {/* Cancel Booking */}
+            <Card className="p-6 border-red-100">
+                <div className="flex items-center gap-3 mb-4 text-red-700">
+                    <Ban className="h-6 w-6" />
+                    <h2 className="text-xl font-serif font-bold">Annuler la réservation</h2>
+                </div>
+                <p className="text-sm text-gray-600 mb-4">
+                    L’annulation marquera la réservation comme annulée. Cette action est irréversible.
+                </p>
+                <Button
+                    variant="secondary"
+                    className="w-full border-red-300 text-red-700 hover:bg-red-50"
+                    onClick={handleCancelBooking}
+                    disabled={loading || isLocked}
+                >
+                    {loading ? <Loader2 className="animate-spin mr-2" /> : null}
+                    {isLocked ? 'Réservation déjà annulée' : 'Annuler ma réservation'}
                 </Button>
             </Card>
         </div>

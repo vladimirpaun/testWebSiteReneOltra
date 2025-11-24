@@ -37,7 +37,20 @@ export default async function BookingDetailsPage(props: PageProps) {
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="mb-8">
                     <h1 className="text-3xl font-serif font-bold mb-2">Modifier ma réservation</h1>
-                    <p className="text-gray-600">Référence: {booking.id}</p>
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:gap-3">
+                        <p className="text-gray-600">Référence: {booking.id}</p>
+                        <span
+                            className={`mt-2 sm:mt-0 inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold ${
+                                booking.status === 'CANCELLED'
+                                    ? 'bg-red-100 text-red-700'
+                                    : booking.status === 'CONFIRMED'
+                                    ? 'bg-green-100 text-green-700'
+                                    : 'bg-amber-100 text-amber-800'
+                            }`}
+                        >
+                            Statut : {booking.status}
+                        </span>
+                    </div>
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">

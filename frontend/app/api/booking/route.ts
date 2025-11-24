@@ -73,33 +73,55 @@ export async function POST(request: Request) {
 
 export async function GET(request: Request) {
     const { searchParams } = new URL(request.url)
-    const email = searchParams.get('email')
+    const query = searchParams.get('q') || searchParams.get('email') || searchParams.get('ref')
 
-    if (!email) {
-        return NextResponse.json({ error: 'Email is required' }, { status: 400 })
+    if (!query) {
+        return NextResponse.json({ error: 'Query is required' }, { status: 400 })
     }
 
     try {
-        const user = await prisma.user.findUnique({
-            where: { email },
+        // If the query looks like an email, search by email; otherwise treat it as a booking reference.
+        const looksLikeEmail = query.includes('@')
+
+        if (looksLikeEmail) {
+            const user = await prisma.user.findUnique({
+                where: { email: query },
+                include: {
+                    bookings: {
+                        include: {
+                            stay: true,
+                            supplements: {
+                                include: { supplement: true }
+                            }
+                        },
+                        orderBy: { startDate: 'desc' }
+                    }
+                }
+            })
+
+            if (!user) {
+                return NextResponse.json([], { status: 200 })
+            }
+
+            return NextResponse.json(user.bookings)
+        }
+
+        // Search by booking id/reference
+        const booking = await prisma.booking.findUnique({
+            where: { id: query },
             include: {
-                bookings: {
-                    include: {
-                        stay: true,
-                        supplements: {
-                            include: { supplement: true }
-                        }
-                    },
-                    orderBy: { startDate: 'desc' }
+                stay: true,
+                supplements: {
+                    include: { supplement: true }
                 }
             }
         })
 
-        if (!user) {
+        if (!booking) {
             return NextResponse.json([], { status: 200 })
         }
 
-        return NextResponse.json(user.bookings)
+        return NextResponse.json([booking])
     } catch (error) {
         console.error('Error fetching bookings:', error)
         return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 })
