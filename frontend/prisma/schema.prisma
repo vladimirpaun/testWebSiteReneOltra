@@ -37,9 +37,13 @@ model Stay {
   description String?
   basePrice   Float
   images      String?  // JSON string of image URLs
+  zoneId      String?  // For map integration: "A", "B", "V1", etc.
+  number      Int?     // For map integration: 1, 2, 3...
   bookings    Booking[]
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
+
+  @@unique([zoneId, number])
 }
 
 model Supplement {

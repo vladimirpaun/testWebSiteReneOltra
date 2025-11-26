@@ -127,3 +127,23 @@ Le schéma de base de données (`schema.prisma`) définit les entités suivantes
 -   **Tailwind CSS** : Utilisé pour un développement rapide et un design cohérent et responsive. La configuration v4 a été adoptée pour sa simplicité.
 -   **Prisma & SQLite** : SQLite permet un développement local sans configuration lourde de serveur SGBD. Prisma offre une sécurité de type (Type-safety) de bout en bout avec TypeScript.
 -   **Gestion des Erreurs** : L'API renvoie des codes HTTP standard (400, 500) et des messages d'erreur clairs pour le débogage.
+
+## 7. Intégration Carte Interactive (Nouveau)
+
+Une vue "Carte Interactive" a été ajoutée à la page de résultats (`/hebergements`).
+
+### Fonctionnalités
+-   **Basculement Vue Liste / Carte** : Un bouton permet de changer de mode d'affichage.
+-   **Carte SVG Interactive** : Visualisation des emplacements (Zones A-O, Villages).
+-   **Disponibilité en Temps Réel** : Les emplacements sont colorés selon leur statut (Vert = Disponible, Rouge = Occupé).
+-   **Sidebar de Détails** : Cliquer sur un emplacement ouvre un panneau latéral avec les détails et un bouton de réservation.
+-   **Filtres** : Filtrage par catégorie directement sur la carte.
+
+### Modifications Techniques
+-   **Schema Prisma** : Ajout des champs `zoneId` et `number` au modèle `Stay` pour lier les enregistrements DB aux emplacements de la carte.
+-   **API** : Nouvel endpoint `/api/map-availability` qui retourne *tous* les emplacements avec leur statut (contrairement à `/api/availability` qui ne retourne que les disponibles).
+-   **Composants** :
+    -   `CampingMap.tsx` : Rendu de la carte et logique d'interaction.
+    -   `MapSidebar.tsx` : Affichage des détails.
+    -   `MapFilters.tsx` : Barre de filtres.
+-   **Seed** : Le script de seed a été refondu pour générer ~300 emplacements correspondant à la configuration réelle de la carte.

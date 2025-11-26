@@ -21,47 +21,90 @@ async function main() {
   })
 
   // Create Stays
-  await prisma.stay.create({
-    data: {
-      name: 'Mobil-home Confort',
-      type: 'Mobil-home',
-      capacity: 4,
-      surface: 28,
-      rooms: 2,
-      bathrooms: 1,
-      description: 'Un mobil-home confortable pour toute la famille.',
-      basePrice: 80.0,
-      images: JSON.stringify(['/images/mobilhome-confort.jpg']),
-    },
-  })
+  // Clear existing stays to avoid conflicts
+  await prisma.bookingSupplement.deleteMany()
+  await prisma.booking.deleteMany()
+  await prisma.stay.deleteMany()
 
-  await prisma.stay.create({
-    data: {
-      name: 'Emplacement Tente',
-      type: 'Emplacement',
-      capacity: 6,
-      surface: 100,
-      rooms: 0,
-      bathrooms: 0,
-      description: 'Grand emplacement pour tente ou caravane avec électricité.',
-      basePrice: 25.0,
-      images: JSON.stringify(['/images/emplacement.jpg']),
-    },
-  })
+  const ZONES_CONFIG = [
+    { id: 'O', label: 'Allée O', type: 'row', spots: 16, category: 'Standard' },
+    { id: 'N', label: 'Allée N', type: 'row', spots: 16, category: 'Standard' },
+    { id: 'M', label: 'Allée M', type: 'row', spots: 18, category: 'Confort' },
+    { id: 'L', label: 'Allée L', type: 'row', spots: 18, category: 'Confort' },
+    { id: 'K', label: 'Allée K', type: 'row', spots: 20, category: 'Grand Confort' },
+    { id: 'J', label: 'Allée J', type: 'row', spots: 20, category: 'Grand Confort' },
+    { id: 'I', label: 'Allée I', type: 'row', spots: 20, category: 'Premium' },
+    { id: 'H', label: 'Allée H', type: 'row', spots: 22, category: 'Premium' },
+    { id: 'G', label: 'Allée G', type: 'row', spots: 22, category: 'Premium' },
+    { id: 'F', label: 'Allée F', type: 'row', spots: 22, category: 'Standard' },
+    { id: 'E', label: 'Allée E', type: 'row', spots: 24, category: 'Standard' },
+    { id: 'D', label: 'Allée D', type: 'row', spots: 24, category: 'Standard' },
+    { id: 'C', label: 'Allée C', type: 'row', spots: 24, category: 'Plage' },
+    { id: 'B', label: 'Allée B', type: 'row', spots: 24, category: 'Plage' },
+    { id: 'A', label: 'Allée A', type: 'row', spots: 24, category: 'Plage' },
+  ]
 
-  await prisma.stay.create({
-    data: {
-      name: 'Chalet Luxe',
-      type: 'Chalet',
-      capacity: 6,
-      surface: 45,
-      rooms: 3,
-      bathrooms: 2,
-      description: 'Chalet haut de gamme avec terrasse et vue mer.',
-      basePrice: 150.0,
-      images: JSON.stringify(['/images/chalet-luxe.jpg']),
-    },
-  })
+  const VILLAGES = [
+    { id: 'V1', label: 'Village Hestia', spots: 8 },
+    { id: 'V2', label: 'Village Horus', spots: 8 },
+    { id: 'V3', label: 'Village Osiris', spots: 8 },
+    { id: 'V4', label: 'Village Zeus', spots: 6 },
+    { id: 'V5', label: 'Village Neptune', spots: 6 },
+  ]
+
+  const getPrice = (category: string) => {
+    const base: Record<string, number> = {
+      'Standard': 45,
+      'Confort': 55,
+      'Grand Confort': 65,
+      'Premium': 75,
+      'Plage': 85,
+      'Cottage': 120
+    }
+    return base[category] || 50
+  }
+
+  // Generate Zone Stays
+  for (const zone of ZONES_CONFIG) {
+    for (let i = 1; i <= zone.spots; i++) {
+      await prisma.stay.create({
+        data: {
+          name: `${zone.label} - Emplacement ${i}`,
+          type: zone.category,
+          capacity: 6,
+          surface: 90,
+          rooms: 0,
+          bathrooms: 0,
+          description: `Emplacement ${zone.category} avec électricité 10A, Eau, Wifi.`,
+          basePrice: getPrice(zone.category),
+          images: JSON.stringify(['/images/emplacement.jpg']),
+          zoneId: zone.id,
+          number: i,
+        },
+      })
+    }
+  }
+
+  // Generate Village Stays
+  for (const village of VILLAGES) {
+    for (let i = 1; i <= village.spots; i++) {
+      await prisma.stay.create({
+        data: {
+          name: `${village.label} - Cottage ${i}`,
+          type: 'Cottage',
+          capacity: 4,
+          surface: 35,
+          rooms: 2,
+          bathrooms: 1,
+          description: 'Cottage tout équipé avec climatisation, TV, terrasse et Wifi Premium.',
+          basePrice: 120,
+          images: JSON.stringify(['/images/mobilhome-confort.jpg']),
+          zoneId: village.id,
+          number: i,
+        },
+      })
+    }
+  }
 
   console.log('Database seeded!')
 }
