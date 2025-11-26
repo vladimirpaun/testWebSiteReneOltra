@@ -2,8 +2,8 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { Button } from '@/components/ui/Button'
-import { Input } from '@/components/ui/Input'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
 import { Calendar, Users } from 'lucide-react'
 
 export default function Home() {

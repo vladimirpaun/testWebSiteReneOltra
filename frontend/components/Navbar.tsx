@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
-import { Button } from './ui/Button'
+import { Button } from './ui/button'
 import { Menu, X } from 'lucide-react'
 
 export function Navbar() {
@@ -52,9 +52,8 @@ export function Navbar() {
 
             {/* Mobile drawer */}
             <div
-                className={`md:hidden bg-white border-t border-gray-100 shadow-sm transition-all duration-200 ${
-                    open ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
-                }`}
+                className={`md:hidden bg-white border-t border-gray-100 shadow-sm transition-all duration-200 ${open ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
+                    }`}
             >
                 <div className="px-4 py-3 space-y-4">
                     {navLinks.map(link => (

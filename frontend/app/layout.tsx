@@ -3,6 +3,7 @@ import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { AssistantWidget } from "@/components/assistant/AssistantWidget";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
@@ -25,6 +26,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <AssistantWidget />
       </body>
     </html>
   );

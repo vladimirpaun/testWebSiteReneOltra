@@ -1,6 +1,6 @@
 import Link from 'next/link'
-import { Card } from './ui/Card'
-import { Button } from './ui/Button'
+import { Card } from './ui/card'
+import { Button } from './ui/button'
 import { Users, Maximize, Bed, Bath } from 'lucide-react'
 
 interface Stay {

@@ -3,7 +3,7 @@
 import { useEffect, useState, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { StayCard } from '@/components/StayCard'
-import { Button } from '@/components/ui/Button'
+import { Button } from '@/components/ui/button'
 import { Loader2 } from 'lucide-react'
 import { CampingMap } from '@/components/map/CampingMap'
 import { MapSidebar } from '@/components/map/MapSidebar'

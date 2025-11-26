@@ -42,3 +42,11 @@ yarn-error.log*
 next-env.d.ts
 
 /app/generated/prisma
+
+# Google Cloud Credentials (NEVER COMMIT THIS!)
+google-credentials.json
+*-credentials.json
+service-account*.json
+
+# Assistant Config
+assistant-config.json
