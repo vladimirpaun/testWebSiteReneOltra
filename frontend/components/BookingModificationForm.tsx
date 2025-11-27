@@ -1,9 +1,9 @@
 'use client'
 
 import { useState } from 'react'
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { Card } from '@/components/ui/card'
+import { Button } from '@/components/ui/Button'
+import { Input } from '@/components/ui/Input'
+import { Card } from '@/components/ui/Card'
 import { useRouter } from 'next/navigation'
 import { Loader2, Calendar, ShoppingBag, Ban } from 'lucide-react'
 

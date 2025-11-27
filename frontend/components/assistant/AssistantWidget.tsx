@@ -2,10 +2,10 @@
 
 import { useState, useRef, useEffect } from 'react'
 import { MessageSquare, X, Send, Mic, Loader2, Sparkles, Volume2, VolumeX } from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import { Card } from '@/components/ui/card'
+import { Button } from '@/components/ui/Button'
+import { Card } from '@/components/ui/Card'
 import { ScrollArea } from '@/components/ui/scroll-area'
-import { Input } from '@/components/ui/input'
+import { Input } from '@/components/ui/Input'
 import LiveAssistant from './LiveAssistant'
 
 interface Message {

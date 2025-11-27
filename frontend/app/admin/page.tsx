@@ -1,6 +1,6 @@
 import Link from 'next/link'
-import { Card } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
+import { Card } from '@/components/ui/Card'
+import { Button } from '@/components/ui/Button'
 import { Calendar, Users, CreditCard, Settings } from 'lucide-react'
 
 export default function AdminDashboard() {

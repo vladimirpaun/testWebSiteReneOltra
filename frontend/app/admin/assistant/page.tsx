@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Button } from '@/components/ui/button'
+import { Button } from '@/components/ui/Button'
 import { Loader2, Save, Upload } from 'lucide-react'
 
 export default function AssistantAdminPage() {
