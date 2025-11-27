@@ -6,6 +6,7 @@ function cn(...inputs: ClassValue[]) {
     return twMerge(clsx(inputs))
 }
 
+
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     variant?: 'primary' | 'secondary' | 'outline' | 'ghost'
     size?: 'sm' | 'md' | 'lg' | 'icon'
