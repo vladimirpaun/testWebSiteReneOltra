@@ -8,18 +8,18 @@ export const getGenerativeModel = (systemInstruction: string, fileSearchStoreNam
             name: "gerer_disponibilite",
             description: "Récupère la disponibilité actuelle et les tarifs pour un type d'hébergement et une période demandée.",
             parameters: {
-                type: "object" as const,
+                type: "object" as any,
                 properties: {
                     type_emplacement: {
-                        type: "string" as const,
+                        type: "string" as any,
                         description: "Le type d'hébergement recherché (ex: Mobil-home, Emplacement, Chalet, etc.)"
                     },
                     date_debut: {
-                        type: "string" as const,
+                        type: "string" as any,
                         description: "Date de début du séjour au format YYYY-MM-DD"
                     },
                     duree_jours: {
-                        type: "integer" as const,
+                        type: "integer" as any,
                         description: "Durée du séjour en nombre de nuits"
                     }
                 },
@@ -30,10 +30,10 @@ export const getGenerativeModel = (systemInstruction: string, fileSearchStoreNam
             name: "obtenir_horaires_service",
             description: "Fournit les jours et heures d'ouverture pour les services spécifiques du camping.",
             parameters: {
-                type: "object" as const,
+                type: "object" as any,
                 properties: {
                     nom_service: {
-                        type: "string" as const,
+                        type: "string" as any,
                         description: "Le nom du service (ex: restaurant, réception, piscine, épicerie)"
                     }
                 },

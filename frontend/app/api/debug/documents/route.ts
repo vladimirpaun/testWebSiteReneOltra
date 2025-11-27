@@ -4,7 +4,8 @@ import { ai } from '@/lib/genai-client'
 export async function GET() {
     try {
         const documents = []
-        for await (const doc of ai.documents.list({})) {
+        const pager = await ai.files.list({})
+        for await (const doc of pager) {
             documents.push({
                 name: doc.name,
                 displayName: doc.displayName,

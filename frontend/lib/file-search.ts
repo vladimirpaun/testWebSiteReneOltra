@@ -8,7 +8,8 @@ export async function getOrCreateFileSearchStore() {
 
     try {
         // Try to get existing store
-        for await (const store of ai.fileSearchStores.list()) {
+        const pager = await ai.fileSearchStores.list()
+        for await (const store of pager) {
             if (store.displayName === storeName) {
                 return store.name
             }
