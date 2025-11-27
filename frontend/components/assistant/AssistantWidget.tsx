@@ -18,7 +18,7 @@ export function AssistantWidget() {
     const [isOpen, setIsOpen] = useState(false)
     const [isLiveMode, setIsLiveMode] = useState(false)
     const [messages, setMessages] = useState<Message[]>([
-        { role: 'model', text: 'Bonjour ! Je suis Gaston, votre assistant virtuel. Comment puis-je vous aider ?', timestamp: new Date() }
+        { role: 'model', text: 'Bonjour ! Je suis René, votre assistant virtuel. Comment puis-je vous aider ?', timestamp: new Date() }
     ])
     const [input, setInput] = useState('')
     const [isLoading, setIsLoading] = useState(false)
@@ -102,7 +102,7 @@ export function AssistantWidget() {
                                 <Sparkles size={20} className="text-yellow-300" />
                             </div>
                             <div>
-                                <h3 className="font-bold text-lg">Gaston</h3>
+                                <h3 className="font-bold text-lg">René</h3>
                                 <p className="text-blue-100 text-xs flex items-center gap-1">
                                     <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
                                     En ligne
@@ -163,7 +163,7 @@ export function AssistantWidget() {
                                 <div className="flex justify-start">
                                     <div className="bg-white p-4 rounded-2xl rounded-bl-none border border-gray-100 shadow-sm flex items-center gap-2">
                                         <Loader2 className="w-4 h-4 animate-spin text-blue-600" />
-                                        <span className="text-xs text-gray-500">Gaston réfléchit...</span>
+                                        <span className="text-xs text-gray-500">René réfléchit...</span>
                                     </div>
                                 </div>
                             )}

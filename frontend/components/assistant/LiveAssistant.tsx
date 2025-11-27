@@ -321,7 +321,7 @@ export default function LiveAssistant({ onClose }: LiveAssistantProps) {
             <div className="bg-gradient-to-r from-blue-600 to-indigo-600 p-4 flex items-center justify-between text-white">
                 <div className="flex items-center gap-2">
                     <div className={cn("w-2 h-2 rounded-full", isConnected ? "bg-green-400 animate-pulse" : "bg-red-400")} />
-                    <span className="font-medium">Gaston (Live)</span>
+                    <span className="font-medium">René (Live)</span>
                 </div>
                 <button onClick={onClose} className="hover:bg-white/20 p-1 rounded-full transition-colors">
                     <X size={18} />
