@@ -13,6 +13,7 @@ export function Navbar() {
         { href: '/hebergements', label: 'Hébergements' },
         { href: '/services', label: 'Services' },
         { href: '/contact', label: 'Contact' },
+        { href: '/satisfaction', label: 'Avis' },
         { href: '/mes-reservations', label: 'Mes Réservations' },
         { href: '/admin', label: 'Admin' },
     ]
